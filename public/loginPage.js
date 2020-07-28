@@ -8,6 +8,8 @@
 const userForm = new UserForm();
 userForm.loginFormCallback = function(data) {
     let authorithAttemp = function(){
+        data.login = String(data.login);
+        data.password = String(data.password);
         const correctAccounts = [
         {login: `oleg@demo.ru`, password: `demo`},
         {login: `ivan@demo.ru`, password: `demo`},
@@ -17,8 +19,7 @@ userForm.loginFormCallback = function(data) {
         ]
 
         if (correctAccounts.some(element => element.login === data.login && element.password === data.password)){
-            // location.reload();
-            console.log(`все верно`)
+            location.reload();
         } else {
             userForm.setLoginErrorMessage(`Логин или пароль не верны`);
         }
