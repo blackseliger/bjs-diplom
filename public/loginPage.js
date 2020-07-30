@@ -2,14 +2,6 @@
 
 
 
-
-
-
-
-
-// loginFormCallback — функция, которая будет выполняться при попытке авторизации
-// registerFormCallback — функция, которая будет выполняться при попытке регистрации
-
 const userForm = new UserForm();
 userForm.loginFormCallback = function(data) {
     ApiConnector.login(data, response => {
@@ -24,19 +16,4 @@ userForm.registerFormCallback = (data) => {
    });
 }
 
-
-
-
-// let userForm = new UserForm();
-
-// userForm.loginFormCallback = data => console.log(data);
-
-// login: oleg@demo.ru, password: demo
-
-
-// userForm.loginFormCallback = data => alert(data);
-
-
-
-// ApiConnector.login({login: `oleg@demo.ru`, password: `demo`}, response => console.log(response);
 
