@@ -26,12 +26,12 @@ ratesBoard.tableBody = () => {
     ApiConnector.getStocks(response => {
         if (response.success === true){
             ratesBoard.clearTable()
-            ratesBoard.fillTable(response.data);
+           return ratesBoard.fillTable(response.data);
         };
     })
 }
 
-setInterval(ratesBoard.tableBody, 60000);
+setInterval(ratesBoard.tableBody, 1000);
 
 
 const moneyManager = new MoneyManager();
